@@ -49,10 +49,10 @@ Atelier & Grain is an architectural luxury e-commerce and custom commission plat
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/atelier-and-grain.git
+git clone https://github.com/Kirtanx3/furniture.git
 
 # Enter project directory
-cd atelier-and-grain
+cd furniture
 
 # Start local server
 npm start
