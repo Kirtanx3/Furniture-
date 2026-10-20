@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier & Grain — Bespoke Handcrafted Furniture & 3D Studio Configurator</title>
+    <meta name="description" content="Design and commission bespoke solid hardwood furniture online. Select rare timber species, custom hand-rubbed finishes, edge profiles, and architectural silhouettes with our real-time 3D configurator.">
+    <meta name="keywords" content="bespoke furniture, custom dining table, live edge walnut, solid white oak, luxury wood furniture, 3d furniture customizer, architectural furniture">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/customizer.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION HEADER
+         ========================================================================== -->
+    <header class="site-header" id="siteHeader">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Atelier & Grain Home">
+                <div class="brand-emblem">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">ATELIER &amp; GRAIN</span>
+                    <span class="brand-sub">Bespoke Hardwood Studio</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#customizerStudio" class="nav-link active">3D Configurator</a></li>
+                    <li><a href="#timberLibrary" class="nav-link">Timber Library</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="#craftsmanship" class="nav-link">Craftsmanship</a></li>
+                    <li><a href="#lookbook" class="nav-link">Lookbook</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Unit Switcher -->
+                <button class="unit-toggle-btn" id="unitToggleBtn" title="Switch measurement units">
+                    <span class="active" data-unit="cm">CM</span>
+                    <span data-unit="in">IN</span>
+                </button>
+
+                <!-- Workshop Cart / Commission Drawer Trigger -->
+                <button class="btn-icon-cart" id="navCartTrigger" aria-label="Open commission drawer" title="View Commission Drawer">
+                    <i class="fa-solid fa-compass"></i>
+                    <span class="cart-count-badge" style="display: none;">0</span>
+                </button>
+
+                <a href="#customizerStudio" class="btn-nav-cta">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>Custom Studio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-media">
+            <img src="assets/images/hero-dining.jpg" alt="Luxury minimalist dining room with custom live edge walnut table">
+        </div>
+        <div class="hero-overlay-gradient"></div>
+
+        <div class="container hero-content">
+            <div class="hero-badge-pill">
+                <i class="fa-solid fa-tree"></i>
+                <span>Heirloom Craftsmanship • 100% FSC-Certified Hardwoods</span>
+            </div>
+
+            <h1 class="hero-title">
+                Bespoke Hardwood Furniture,<br>
+                <em>Sculpted for Generations.</em>
+            </h1>
+
+            <p class="hero-desc">
+                Select your rare timber species, custom silhouette, hand-rubbed finish, and architectural steel or brass base. Experience your one-of-a-kind commission in photorealistic real-time 3D.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#customizerStudio" class="btn-primary-hero">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Launch 3D Configurator</span>
+                </a>
+                <button class="btn-secondary-hero" id="btnOrderSampleBox">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>Order Free Swatch Box</span>
+                </button>
+            </div>
+
+            <div class="hero-trust-metrics">
+                <div class="metric-item">
+                    <span class="metric-val">100%</span>
+                    <span class="metric-lbl">Kiln-Dried Solid Hardwood</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-val">4.98 ★</span>
+                    <span class="metric-lbl">From 1,400+ Bespoke Homes</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-val">Lifetime</span>
+                    <span class="metric-lbl">Joinery & Structural Warranty</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-val">5 Trees</span>
+                    <span class="metric-lbl">Planted for Every Piece Commissioned</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CENTERPIECE: INTERACTIVE 3D CONFIGURATOR STUDIO
+         ========================================================================== -->
+    <section class="section customizer-section" id="customizerStudio">
+        <div class="container">
+            <div class="section-header">
+                <span class="mono-tag">Interactive Design Studio</span>
+                <h2>Customize Your Heirloom Piece</h2>
+                <p>Explore natural grain patterns, custom timber species, hand-applied stains, and precision dimensions with real-time pricing and full 360-degree 3D manipulation.</p>
+            </div>
+
+            <div class="customizer-studio-container">
+                <!-- Left: 3D Viewport & HUD -->
+                <div class="studio-viewport-panel">
+                    <div class="viewport-canvas-container" id="viewport3dContainer">
+                        
+                        <!-- Top HUD: Live Spec and Quick Actions -->
+                        <div class="viewport-top-hud">
+                            <div class="live-spec-pill">
+                                <span class="pill-dot"></span>
+                                <span id="liveSpecPillText">American Black Walnut • Live Edge • 220cm</span>
+                            </div>
+
+                            <div class="viewport-actions-group">
+                                <button class="hud-btn" id="btnExplodeView" title="Toggle Exploded Joinery View">
+                                    <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                                </button>
+                                <button class="hud-btn" id="btnSnapshot" title="Capture High-Res Render Snapshot">
+                                    <i class="fa-solid fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Orbit & Pan Hint -->
+                        <div class="viewport-orbit-hint">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                            <span>Drag to orbit 360° • Scroll to zoom timber grain • Right-click to pan</span>
+                        </div>
+
+                        <!-- Bottom HUD: Camera Presets & Lighting Modes -->
+                        <div class="viewport-bottom-hud">
+                            <div class="camera-presets-bar">
+                                <button class="cam-btn active" data-view="perspective">Perspective</button>
+                                <button class="cam-btn" data-view="top">Top Grain</button>
+                                <button class="cam-btn" data-view="front">Front View</button>
+                                <button class="cam-btn" data-view="detail">Corner Macro</button>
+                            </div>
+
+                            <div class="lighting-switcher">
+                                <button class="light-btn active" data-light="studio" title="Studio Softbox Lighting">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </button>
+                                <button class="light-btn" data-light="golden-hour" title="Warm Golden Hour Sunlight">
+                                    <i class="fa-solid fa-sun"></i>
+                                </button>
+                                <button class="light-btn" data-light="minimal-gallery" title="Gallery Spotlights">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Configurator Control Panels -->
+                <div class="studio-controls-panel">
+                    <!-- Product Category Selector -->
+                    <div class="product-type-nav" id="productNavContainer"></div>
+
+                    <!-- Step Navigation Tabs -->
+                    <div class="config-steps-nav">
+                        <button class="step-tab-btn active" data-step="silhouette">
+                            <i class="fa-solid fa-shapes"></i>
+                            <span>Silhouette</span>
+                        </button>
+                        <button class="step-tab-btn" data-step="wood">
+                            <i class="fa-solid fa-tree"></i>
+                            <span>Timber</span>
+                        </button>
+                        <button class="step-tab-btn" data-step="finish">
+                            <i class="fa-solid fa-palette"></i>
+                            <span>Finish</span>
+                        </button>
+                        <button class="step-tab-btn" data-step="base">
+                            <i class="fa-solid fa-cubes"></i>
+                            <span>Base</span>
+                        </button>
+                        <button class="step-tab-btn" data-step="dimensions">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <span>Sizing &amp; Details</span>
+                        </button>
+                    </div>
+
+                    <!-- Step 1: Style Silhouette -->
+                    <div class="step-content-pane active" id="stepPane-silhouette">
+                        <div class="pane-heading">
+                            <h3>Choose Your Design Silhouette</h3>
+                            <p>Select the overarching architectural profile and edge personality.</p>
+                        </div>
+                        <div class="styles-grid" id="stylesGrid"></div>
+                    </div>
+
+                    <!-- Step 2: Wood Species -->
+                    <div class="step-content-pane" id="stepPane-wood">
+                        <div class="pane-heading">
+                            <h3>Select Timber Species &amp; Provenance</h3>
+                            <p>Sustainably harvested old-growth character timbers with certified traceability.</p>
+                        </div>
+                        <div class="woods-swatches-grid" id="woodsGrid"></div>
+                    </div>
+
+                    <!-- Step 3: Finishes & Stains -->
+                    <div class="step-content-pane" id="stepPane-finish">
+                        <div class="pane-heading">
+                            <h3>Hand-Rubbed Finishes &amp; Color Tones</h3>
+                            <p>Organic plant-based hardwax oils that seal and highlight natural grain ripples.</p>
+                        </div>
+                        <div class="finishes-grid" id="finishesGrid"></div>
+                    </div>
+
+                    <!-- Step 4: Legs & Base Architecture -->
+                    <div class="step-content-pane" id="stepPane-base">
+                        <div class="pane-heading">
+                            <h3>Architectural Base &amp; Legs</h3>
+                            <p>Select solid timber joinery, cold-rolled steel, or brushed brass hardware.</p>
+                        </div>
+                        <div class="legs-grid" id="legsGrid"></div>
+                    </div>
+
+                    <!-- Step 5: Sizing & Bespoke Inlays -->
+                    <div class="step-content-pane" id="stepPane-dimensions">
+                        <div class="pane-heading">
+                            <h3>Dimensions, Edge &amp; Bespoke Inlays</h3>
+                            <p>Tailor your piece down to the exact centimeter to fit your sanctuary.</p>
+                        </div>
+                        <div id="dimensionsPane"></div>
+                    </div>
+
+                    <!-- Live Price & Commission Actions -->
+                    <div class="studio-checkout-bar">
+                        <div class="price-calculation-block">
+                            <span class="price-sub-caption">Bespoke Commission Total</span>
+                            <div class="price-headline-wrap">
+                                <span class="price-display-val" id="calculatedPriceDisplay">$2,830</span>
+                                <span class="price-estimate-tag">Includes White-Glove Setup</span>
+                            </div>
+                            <span style="font-size: 0.76rem; color: var(--gold-light);" id="affirmRateDisplay">Or $236/mo with 0% APR</span>
+                        </div>
+
+                        <div class="studio-order-actions">
+                            <button class="btn-secondary-action" id="btnDownloadSpecSheet" title="Download Spec Sheet">
+                                <i class="fa-solid fa-file-invoice"></i>
+                                <span>Spec Sheet</span>
+                            </button>
+                            <button class="btn-commission-cta" id="btnCommissionMain">
+                                <i class="fa-solid fa-hammer"></i>
+                                <span>Commission Build</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trust Perks -->
+                    <div class="studio-trust-perks">
+                        <span><i class="fa-solid fa-leaf"></i> 5 Trees Planted</span>
+                        <span><i class="fa-solid fa-truck-ramp-box"></i> White-Glove In-Home Delivery</span>
+                        <span><i class="fa-solid fa-certificate"></i> Lifetime Joint Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         MATERIAL & TIMBER LIBRARY SECTION
+         ========================================================================== -->
+    <section class="section timber-section" id="timberLibrary">
+        <div class="container">
+            <div class="section-header">
+                <span class="mono-tag">Sustainable Material Truth</span>
+                <h2>The Atelier Hardwood Library</h2>
+                <p>We source only mature, ethically harvested hardwoods from responsible regional forests and historic architectural salvages. Click any specimen to load it into the customizer.</p>
+            </div>
+
+            <div class="timber-library-wrap">
+                <div class="timber-macro-display">
+                    <img src="assets/images/wood-swatches.jpg" alt="Macro comparison of luxury hardwood species">
+                    <div class="timber-swatch-banner">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Zero-VOC Natural Sealants</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary);">Every grain pore is conditioned with European cold-pressed linseed oils and carnauba wax, completely free of polyurethane plastics.</p>
+                    </div>
+                </div>
+
+                <div class="timber-cards-grid" id="timberSpecimensList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CURATED READY-TO-ORDER COLLECTIONS
+         ========================================================================== -->
+    <section class="section collections-section" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <span class="mono-tag">Architectural Masterworks</span>
+                <h2>The 2026 Atelier Collection</h2>
+                <p>Explore our signature silhouettes, each individually made to order by our senior craftspeople.</p>
+            </div>
+
+            <div class="collections-grid">
+                <!-- Dining Table Card -->
+                <div class="collection-card" onclick="window.atelierApp.switchProduct('dining-table'); document.getElementById('customizerStudio').scrollIntoView({behavior: 'smooth'});">
+                    <div class="collection-img-wrap">
+                        <span class="collection-badge">Dining Icon</span>
+                        <img src="assets/images/hero-dining.jpg" alt="The Solstice Dining Table">
+                    </div>
+                    <div class="collection-body">
+                        <h3>The Solstice Dining Table</h3>
+                        <p>Continuous bookmatched slab featuring dramatic natural cathedral curves, hand-smoothed organic edge, and sculptural steel legs.</p>
+                        <div class="collection-footer">
+                            <div class="collection-price">From $2,450 <span>USD</span></div>
+                            <span class="btn-card-customize">Customize <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lounge Chair Card -->
+                <div class="collection-card" onclick="window.atelierApp.switchProduct('lounge-chair'); document.getElementById('customizerStudio').scrollIntoView({behavior: 'smooth'});">
+                    <div class="collection-img-wrap">
+                        <span class="collection-badge">Sculptural Seating</span>
+                        <img src="assets/images/lounge-chair.jpg" alt="The Astrid Lounge Chair">
+                    </div>
+                    <div class="collection-body">
+                        <h3>The Astrid Lounge Armchair</h3>
+                        <p>Steam-bent solid European White Oak framing luxurious Italian bouclé upholstery. Engineered with gentle lumbar ergonomic recline.</p>
+                        <div class="collection-footer">
+                            <div class="collection-price">From $1,280 <span>USD</span></div>
+                            <span class="btn-card-customize">Customize <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Desk Card -->
+                <div class="collection-card" onclick="window.atelierApp.switchProduct('executive-desk'); document.getElementById('customizerStudio').scrollIntoView({behavior: 'smooth'});">
+                    <div class="collection-img-wrap">
+                        <span class="collection-badge">Executive Studio</span>
+                        <img src="assets/images/executive-desk.jpg" alt="The Metropolis Desk">
+                    </div>
+                    <div class="collection-body">
+                        <h3>The Metropolis Executive Desk</h3>
+                        <p>Architectural floating cantilever with concealed dual soft-close drawers, subterranean inductive Qi charging, and brass foot ferrules.</p>
+                        <div class="collection-footer">
+                            <div class="collection-price">From $2,150 <span>USD</span></div>
+                            <span class="btn-card-customize">Customize <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Table Card -->
+                <div class="collection-card" onclick="window.atelierApp.switchProduct('coffee-table'); document.getElementById('customizerStudio').scrollIntoView({behavior: 'smooth'});">
+                    <div class="collection-img-wrap">
+                        <span class="collection-badge">Living Centerpiece</span>
+                        <img src="assets/images/coffee-table.jpg" alt="The Kyoto Pebble Table">
+                    </div>
+                    <div class="collection-body">
+                        <h3>The Kyoto Pebble Coffee Table</h3>
+                        <p>Harmonious organic asymmetric curves inspired by Japanese Zen rock gardens, sculpted from a solid 5cm thick walnut block.</p>
+                        <div class="collection-footer">
+                            <div class="collection-price">From $1,150 <span>USD</span></div>
+                            <span class="btn-card-customize">Customize <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CRAFTSMANSHIP & ATELIER STORY
+         ========================================================================== -->
+    <section class="section craftsmanship-section" id="craftsmanship">
+        <div class="container">
+            <div class="craftsmanship-grid">
+                <div class="craft-img-stack">
+                    <div class="craft-main-img">
+                        <img src="assets/images/workshop-craftsman.jpg" alt="Master woodworker hand-planing a solid walnut tabletop">
+                    </div>
+                    <div class="craft-floating-card">
+                        <span class="gold-gradient-text">90 Days</span>
+                        <h5 style="margin: 0.35rem 0 0.2rem 0; font-size: 1.05rem;">Solar Kiln Conditioning</h5>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">Stabilized to 7% core moisture equilibrium to ensure your furniture never cups, twists, or splits across seasonal shifts.</p>
+                    </div>
+                </div>
+
+                <div class="craft-text-content">
+                    <span class="mono-tag">Tradition Meets Architecture</span>
+                    <h2 style="font-size: 2.8rem; margin: 0.6rem 0 1.25rem 0;">Heirloom Joinery. Zero Compromises.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7;">
+                        In an era of disposable flat-pack furniture, we honor the ancient lineage of master woodcraft. Every table, chair, and desk is crafted by an assigned artisan from initial rough lumber selection to final hand-rubbed wax burnishing.
+                    </p>
+
+                    <div class="craft-pillars">
+                        <div class="craft-pillar-item">
+                            <div class="craft-pillar-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                            <div class="craft-pillar-content">
+                                <h4>Blind Mortise &amp; Tenon Joinery</h4>
+                                <p>Mechanical interlocks carved with surgical tolerances. No screws or cheap dowels where structural stresses concentrate.</p>
+                            </div>
+                        </div>
+
+                        <div class="craft-pillar-item">
+                            <div class="craft-pillar-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <div class="craft-pillar-content">
+                                <h4>Hand-Chiseled Brass Dutchman Bowties</h4>
+                                <p>We honor the organic fissures of live edge slabs by setting solid brass butterfly keys that stabilize tension while celebrating timber biology.</p>
+                            </div>
+                        </div>
+
+                        <div class="craft-pillar-item">
+                            <div class="craft-pillar-icon"><i class="fa-solid fa-stamp"></i></div>
+                            <div class="craft-pillar-content">
+                                <h4>Numbered Workshop Serial &amp; Provenance Plate</h4>
+                                <p>Each piece is engraved with the craftsman’s monogram, date of felling, and registered in our lifetime archives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         INSPIRATION LOOKBOOK
+         ========================================================================== -->
+    <section class="section lookbook-section" id="lookbook">
+        <div class="container">
+            <div class="section-header">
+                <span class="mono-tag">Installed Residences</span>
+                <h2>The Living Lookbook</h2>
+                <p>Glimpse Atelier &amp; Grain bespoke pieces anchoring premier residences across New York, London, Tokyo, and San Francisco.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="lookbook-filters">
+                <button class="filter-btn active" data-filter="all">All Sanctuaries</button>
+                <button class="filter-btn" data-filter="dining">Dining Halls</button>
+                <button class="filter-btn" data-filter="living">Living Lounges</button>
+                <button class="filter-btn" data-filter="workspace">Executive Studios</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="lookbook-masonry" id="lookbookGrid"></div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS & PRESS
+         ========================================================================== -->
+    <section class="section reviews-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="mono-tag">Client Acclaim</span>
+                <h2>Voices of the Custodians</h2>
+                <p>Our clients don’t just buy furniture; they become custodians of functional fine art.</p>
+            </div>
+
+            <div class="testimonials-grid" id="testimonialsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ SECTION
+         ========================================================================== -->
+    <section class="section faq-section" id="faq">
+        <div class="container" style="max-width: 860px;">
+            <div class="section-header">
+                <span class="mono-tag">Inquiries &amp; Care</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our commissioning process, wood behavior, and white-glove logistics.</p>
+            </div>
+
+            <div class="faq-accordion-group">
+                <details class="faq-item" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem; margin-bottom: 1rem; cursor: pointer;">
+                    <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>How does natural solid hardwood respond to seasonal changes?</span>
+                        <i class="fa-solid fa-chevron-down" style="color: var(--gold-light); font-size: 0.9rem;"></i>
+                    </summary>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                        Real wood breathes and naturally expands or contracts fractionally with seasonal humidity shifts. We kiln-cure all lumber down to 6–8% moisture equilibrium and engineer our tables with slotted architectural expansion fasteners and stabilizer C-channels embedded underneath. This gives the wood room to breathe without ever bowing or warping.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem; margin-bottom: 1rem; cursor: pointer;">
+                    <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>Can I request specific wood slab character or exact custom sizing?</span>
+                        <i class="fa-solid fa-chevron-down" style="color: var(--gold-light); font-size: 0.9rem;"></i>
+                    </summary>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                        Yes! While our interactive 3D configurator lets you customize down to the centimeter, you can also book a video consultation with our head timber scout. We can share photographs of raw flitch slabs currently in our drying kilns so you can hand-select the exact tree trunk for your piece.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem; margin-bottom: 1rem; cursor: pointer;">
+                    <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>What is your finish maintenance routine?</span>
+                        <i class="fa-solid fa-chevron-down" style="color: var(--gold-light); font-size: 0.9rem;"></i>
+                    </summary>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                        Our plant-based hardwax oil penetrates deep into the wood fibers rather than forming an artificial plastic film on top. Everyday cleaning requires only a damp cloth with mild soap. Every commission arrives with our complimentary Atelier Care Kit containing our organic maintenance oil and a wool burnishing cloth.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem; margin-bottom: 1rem; cursor: pointer;">
+                    <summary style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        <span>How does White-Glove In-Home Delivery work?</span>
+                        <i class="fa-solid fa-chevron-down" style="color: var(--gold-light); font-size: 0.9rem;"></i>
+                    </summary>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                        All pieces travel in climate-controlled padded timber crates. Our white-glove two-person delivery team carries the furniture to your room of choice, assembles the base, levels the feet, removes all packaging, and polishes the top before departing.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="brand-logo" style="margin-bottom: 1.25rem;">
+                        <div class="brand-emblem">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-name">ATELIER &amp; GRAIN</span>
+                            <span class="brand-sub">Bespoke Hardwood Studio</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; max-width: 320px; margin-bottom: 1.5rem;">
+                        Handcrafting heirloom architectural furniture from sustainable American and European timber. Designed in the digital studio, forged in our craft atelier.
+                    </p>
+                    <div style="display: flex; gap: 1rem; color: var(--gold-light); font-size: 1.2rem;">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" aria-label="Houzz"><i class="fa-brands fa-houzz"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Custom Studio</h5>
+                    <ul class="footer-links">
+                        <li><a href="#customizerStudio" onclick="window.atelierApp.switchProduct('dining-table');">Dining Tables</a></li>
+                        <li><a href="#customizerStudio" onclick="window.atelierApp.switchProduct('lounge-chair');">Lounge Chairs</a></li>
+                        <li><a href="#customizerStudio" onclick="window.atelierApp.switchProduct('executive-desk');">Executive Desks</a></li>
+                        <li><a href="#customizerStudio" onclick="window.atelierApp.switchProduct('coffee-table');">Coffee Tables</a></li>
+                        <li><a href="#customizerStudio">3D Configurator</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Timber &amp; Craft</h5>
+                    <ul class="footer-links">
+                        <li><a href="#timberLibrary">American Walnut</a></li>
+                        <li><a href="#timberLibrary">European White Oak</a></li>
+                        <li><a href="#timberLibrary">Hard Rock Maple</a></li>
+                        <li><a href="#timberLibrary">Smoked Japanese Ash</a></li>
+                        <li><a href="#craftsmanship">Joinery Standards</a></li>
+                        <li><a href="#" id="btnBookConsultation">Artisan Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Atelier Workshop</h5>
+                    <ul class="footer-links" style="font-size: 0.88rem; color: var(--text-secondary);">
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> 844 Timber Mill Road, Hudson Valley, NY</li>
+                        <li><i class="fa-solid fa-envelope" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> commissions@ateliergrain.com</li>
+                        <li><i class="fa-solid fa-phone" style="color: var(--gold-primary); margin-right: 0.5rem;"></i> +1 (800) 842-8354</li>
+                        <li style="margin-top: 1rem; color: var(--gold-light); font-family: var(--font-mono); font-size: 0.75rem;">Mon–Fri 8:00 AM – 6:00 PM EST</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Atelier &amp; Grain Bespoke Woodworks LLC. All rights reserved. Registered trademark of fine timber design.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">FSC Certificate Traceability</a>
+                    <a href="#">Privacy Protocol</a>
+                    <a href="#">Lifetime Warranty Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         SLIDE-OUT CART & COMMISSION DRAWER
+         ========================================================================== -->
+    <div class="drawer-backdrop" id="cartDrawerBackdrop">
+        <aside class="cart-drawer">
+            <div class="drawer-header">
+                <div>
+                    <span class="mono-tag" style="font-size: 0.68rem;">Your Atelier Order</span>
+                    <h3>Commission Bag</h3>
+                </div>
+                <button class="btn-close-drawer" id="btnCloseCartDrawer" aria-label="Close cart drawer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="drawer-content" id="cartDrawerContent"></div>
+
+            <div class="drawer-footer">
+                <div class="drawer-subtotal-row">
+                    <span>Workshop Subtotal</span>
+                    <span id="drawerSubtotal" style="font-family: var(--font-mono);">$0</span>
+                </div>
+                <div class="drawer-subtotal-row">
+                    <span>White-Glove Delivery &amp; Setup</span>
+                    <span style="color: #10b981; font-weight: 600;">Complimentary</span>
+                </div>
+                <div class="drawer-total-row">
+                    <span>Commission Total</span>
+                    <span id="drawerTotal" class="gold-gradient-text" style="font-family: var(--font-mono); font-size: 1.6rem;">$0</span>
+                </div>
+                <button class="btn-checkout-drawer" onclick="alert('Proceeding to secure atelier commission escrow. 50% deposit charged now, remaining 50% upon white-glove inspection.');">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Commission Custom Build</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ==========================================================================
+         PRINT-READY SPEC SHEET MODAL
+         ========================================================================== -->
+    <div class="modal-overlay" id="specSheetModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close spec sheet modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <span class="mono-tag">Atelier &amp; Grain Architectural Dossier</span>
+                <h3 style="font-size: 1.8rem; margin-top: 0.35rem;">Bespoke Furniture Specification</h3>
+            </div>
+
+            <div class="spec-sheet-render-preview" id="specSheetImgPreview"></div>
+
+            <div id="specSheetTableContent"></div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn-secondary-action" style="flex: 1; justify-content: center;" onclick="window.print();">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print Dossier</span>
+                </button>
+                <button class="btn-commission-cta" style="flex: 1; justify-content: center;" onclick="window.atelierApp.addToCart(); window.atelierApp.closeModal('specSheetModal');">
+                    <i class="fa-solid fa-hammer"></i>
+                    <span>Commission This Piece</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         ORDER FREE SWATCH SAMPLE BOX MODAL
+         ========================================================================== -->
+    <div class="modal-overlay" id="sampleBoxModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close swatch box modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="text-align: center; margin-bottom: 1.8rem;">
+                <span class="mono-tag">Complimentary Tactile Experience</span>
+                <h3 style="font-size: 1.8rem; margin-top: 0.35rem;">Order Your Hardwood Swatch Box</h3>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                    Receive solid 10cm x 15cm hand-finished timber blocks of American Walnut, European White Oak, Sugar Maple, and Smoked Ash directly to your home.
+                </p>
+            </div>
+
+            <form id="sampleBoxForm">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">First Name</label>
+                        <input type="text" required placeholder="Elena" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Last Name</label>
+                        <input type="text" required placeholder="Rostova" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Delivery Shipping Address</label>
+                    <input type="text" required placeholder="742 Evergreen Terrace, Penthouse B" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">City, State, Zip</label>
+                        <input type="text" required placeholder="New York, NY 10013" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Country</label>
+                        <select style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                            <option>United States</option>
+                            <option>United Kingdom</option>
+                            <option>Canada</option>
+                            <option>European Union</option>
+                            <option>Australia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-commission-cta" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Dispatch Free Swatch Box ($0)</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         BOOK ARTISAN VIDEO CONSULTATION MODAL
+         ========================================================================== -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close consultation modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="text-align: center; margin-bottom: 1.8rem;">
+                <span class="mono-tag">Private Architectural Consultation</span>
+                <h3 style="font-size: 1.8rem; margin-top: 0.35rem;">Speak with a Master Woodworker</h3>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                    Schedule a complimentary 30-minute 1-on-1 video studio session. Review floor plans, live raw slab selections, and custom joinery detailing.
+                </p>
+            </div>
+
+            <form id="consultationForm">
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Your Name</label>
+                    <input type="text" required placeholder="Marcus Vance" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Email Address</label>
+                    <input type="email" required placeholder="marcus@vance.design" style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Preferred Date</label>
+                        <input type="date" required style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.35rem;">Time Slot</label>
+                        <select style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-family: inherit;">
+                            <option>10:00 AM EST (Morning)</option>
+                            <option>2:00 PM EST (Afternoon)</option>
+                            <option>5:30 PM EST (Evening)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-commission-cta" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Confirm Studio Consultation</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ==========================================================================
+         SCRIPTS: THREE.JS & APP ENGINE
+         ========================================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script src="js/data.js"></script>
+    <script src="js/customizer3d.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

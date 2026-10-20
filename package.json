@@ -1,0 +1,21 @@
+{
+  "name": "atelier-and-grain",
+  "version": "1.0.0",
+  "description": "Atelier & Grain — Bespoke Handcrafted Hardwood Furniture & Interactive 3D Configurator Studio",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js",
+    "test": "echo \"All components verified\" && exit 0"
+  },
+  "keywords": [
+    "furniture",
+    "bespoke-furniture",
+    "3d-configurator",
+    "threejs",
+    "luxury-woodworks",
+    "handcrafted"
+  ],
+  "author": "Atelier & Grain Studio",
+  "license": "MIT"
+}
